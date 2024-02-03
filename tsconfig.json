@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "lib": ["ES2022", "DOM"],  
+        "module": "ES2020",
+        
+        "strict": true,
+        "alwaysStrict": true,
+        
+        "exactOptionalPropertyTypes": true,
+        "forceConsistentCasingInFileNames": false,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitOverride": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        
+        "allowJs": true,
+        "checkJs": false,
+
+        "outDir": "dist",
+        // "outFile": "../dist/bundle.js",
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "compileOnSave": false
+}

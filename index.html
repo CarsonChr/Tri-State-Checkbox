@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tri-State Checkbox Demo</title>
+        <style>
+
+            .big-checkbox {
+                width: 30px;
+                height: 30px;
+            }
+
+            .biiiiiiiiig-checkbox {
+                width: 125px;
+                height: 125px;
+                border-radius: 10px;
+            }
+        </style>
+    <body style="overflow: hidden;">
+        <header>
+            <div class="header-wrapper" style="width: 100vw;height: 4em; position: fixed;top: 0px;left:0px;">
+                <div class="header" style="width:100%;background-color: blueviolet;position: fixed">
+                    <h1 style="text-align: center;color: whitesmoke;">Tri-State Checkbox Demo</h1>
+                </div>
+            </div>
+        </header>
+
+        <main style="margin-top: 8em;padding: 3em 6em 6em 6em;box-sizing: border-box; width: 100vw; height:calc(100vh - 4em);display: flex;flex-direction: column;align-items: center;">
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="checkbox-wrapper" style="display: flex;flex-direction: column;align-items: center;justify-content: center;min-width: 300px;">
+                        <div class="checkbox" style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 100%;margin-bottom: 4em;">
+                            <div style="display: flex;align-items: center;font-size:large;width: 100%;">
+                                <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin: 0 3em 1em 3em">
+                                    <h2 style="display: block;margin-bottom: 0;padding-bottom: 0.1em;width: 100%; text-align: center;">Checked</h2>
+                                    <input class="big-checkbox" type="checkbox" id="checkbox1" tri-state="checked">
+                                </div>
+                                <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin: 0 3em 1em 3em">
+                                    <h2 style="display: block;margin-bottom: 0;padding-bottom: 0.1em;width: 100%; text-align: center;">Unchecked</h2>
+                                    <input class="big-checkbox" type="checkbox" id="checkbox2" tri-state="unchecked">
+                                </div>
+                                <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin: 0 3em 1em 3em">
+                                    <h2 style="display: block;margin-bottom: 0;padding-bottom: 0.1em;width: 100%; text-align: center;" for="checkbox3">Unset</h2>
+                                    <input class="big-checkbox" type="checkbox" id="checkbox3" tri-state="unset">
+                                </div>
+                            </div>
+                            <div style="
+                                padding-top: 100px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                width:100%">
+                                <input class="biiiiiiiiig-checkbox" type="checkbox" id="checkbox4" tri-state>
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="./dist/index.js" type="module"></script>
+        <script>
+            var box = document.getElementById("checkbox4");
+            window.onTriStateModuleLoaded = () => {
+                setInterval(box.advanceState, 1000);
+            }
+        </script>
+    </body>
+</html>
