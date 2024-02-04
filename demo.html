@@ -61,10 +61,25 @@
 
         <script src="./dist/index.js" type="module"></script>
         <script>
+            var before = false;
             var box = document.getElementById("checkbox4");
-            window.onTriStateModuleLoaded = () => {
-                setInterval(box.advanceState, 1000);
-            }
+            window.addEventListener('tri-state-loaded', () => {
+                window.createTriStateForAll();
+
+                box.addEventListener("checked", () => {
+                    console.log("checked");
+                });
+
+                box.addEventListener("unchecked", () => {
+                    console.log("unchecked");
+                });
+
+                box.addEventListener("unset", () => {
+                    console.log("unset");
+                });
+                
+                setInterval(box.advanceState, 1500);
+            });
         </script>
     </body>
 </html>
