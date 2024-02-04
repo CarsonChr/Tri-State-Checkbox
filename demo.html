@@ -59,7 +59,8 @@
             </div>
         </main>
 
-        <script src="./dist/index.js" type="module"></script>
+        <!-- Using as a module -->
+        <!-- <script src="./dist/index.js" type="module"></script>
         <script>
             var before = false;
             var box = document.getElementById("checkbox4");
@@ -80,6 +81,27 @@
                 
                 setInterval(box.advanceState, 1500);
             });
+        </script> -->
+
+        <!-- Using as a script -->
+        <script src="tri-state-checkbox.js"></script>
+        <script>
+            var box = document.getElementById("checkbox4");
+            window.createTriStateForAll();
+
+            box.addEventListener("checked", () => {
+                console.log("checked");
+            });
+
+            box.addEventListener("unchecked", () => {
+                console.log("unchecked");
+            });
+
+            box.addEventListener("unset", () => {
+                console.log("unset");
+            });
+            
+            setInterval(box.advanceState, 1500);
         </script>
     </body>
 </html>

@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "esbuild": "0.20.0"
+  },
+  "scripts": {
+    "build": "tsc && esbuild dist/index.js --bundle --outfile=tri-state-checkbox.js"
+  }
+}
