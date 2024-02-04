@@ -4,9 +4,9 @@
 These checkboxes have 3 states:
  - [x] **Checked** 
  - [ ] **Unchecked**
- **Unset**
+ -  **Unset** (Ignore the weird bullet--there was not a markdown option for an indeterminate checkbox)
 
-Clicking (or any other method for changing an input) on the checkbox or its label will cycle through the 3 states. The order of the states can be customized for each checkbox if desired. Right clicking on the checkbox or its label will cycle in reverse.
+Clicking (or any other method for changing an input) on the checkbox or its label will cycle through the 3 states. The order of the states can be customized for each checkbox if desired. Right-clicking on the checkbox or its label will cycle in reverse.
 
 The tri-state checkboxes have no special CSS, so they will use the default look for an input being `checked=true`, `checked=false`, or `indeterminate=true`:
 
@@ -24,20 +24,20 @@ The tri-state checkboxes have no special CSS, so they will use the default look 
 	 - This will convert any checkbox input with a 'tri-state' attribute.
 	 - Ex: `<input type="checkbox"  id="checkbox1"  tri-state>`
 2. `window.createTriState(HTMLInputElement | string)`
-	- This method accepts the several different arguments: 
+	- This method accepts several different arguments: 
 		- checkbox element: `window.createTriState(document.getElementById('checkbox1'))`
 		-  checkbox element's id: `window.createTriState('checkbox1')`
 		- selector query string: `window.createTriState('#checkbox1')`
 
 #### The `tri-state` Attribute:
-Adding this attribute to a checkbox input element allows it to become a tri-state checkbox. If you want to inititialize a checkbox with a specific state, you can specify it: `<input type="checkbox" tri-state="unset">`. The three states are `unset`, `checked`, and `unchecked`
+Adding this attribute to a checkbox input element allows it to become a tri-state checkbox. If you want to initialize a checkbox with a specific state, you can specify it: `<input type="checkbox" tri-state="unset">`. The three states are `unset`, `checked`, and `unchecked`
 
-#### After creating the tri-state checkboxes, those html input elements will have several new properties:
+#### After creating the tri-state checkboxes, those HTML input elements will have several new properties:
 - `state`: `unset` | `checked` | `unchecked`
 	- setting this property will update the checkbox to the new state.
 - `frozen`: boolean
-	- setting this will freeze/unfreeze the element. When frozen, left/right clicking (and every other user method to change a checkbox) will not work.
-	- When frozen, setting `state` or calling `cycleState` , `advanceState` , or `devanceState` will still function normally.
+	- setting this will freeze/unfreeze the element. When frozen, left/right-clicking (and every other user method to change a checkbox) will not work.
+	- When frozen, setting `state` or calling `cycleState`, `advanceState`, or `devanceState` will still function normally.
 - `cycleState`: `(count:  number) =>  void`
 	- This method will cycle the state of the tri-state checkbox. The count parameter will determine the direction and number of states to cycle. A positive number will cycle forward, a negative number will cycle backward. The states will wrap around, so cycling forward from the last state will go to the first state.
 
@@ -48,11 +48,11 @@ Adding this attribute to a checkbox input element allows it to become a tri-stat
 	- This is the same as calling `cycleState(-1)`
 
 - `disposeTriState`: `() =>  void`
-	- Calling this method will revert the tri-state checkbox back to a regular checkbox.
+	- Calling this method will revert the tri-state checkbox to a regular checkbox.
 
 ## Dev Environment Setup
 This requires `npm`, and typescript (accessible via `tsc`)
 
-Run `npm install` to download and setup esbuild. **Done!**
+Run `npm install` to download and set up esbuild. **Done!**
 
 Run `npm run build` to compile the typescript and bundle the javascript. It will output a single file: 'tri-state-checkbox.js'
